@@ -22,11 +22,15 @@ router.get('/:movieId/details', async (req, res) => {
   res.render('movies/details', { movie });
 });
 
+router.get('/search', (req, res) => {
+  res.render('home', { isSearch: true });
+});
+
 function getRatingViewData(rating) {
   if(!Number.isInteger(rating)) {
     return 'n/a';
   };
-  
+
   return '&#x2605'.repeat(rating);
 };
 
