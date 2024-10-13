@@ -1,3 +1,24 @@
 {
-  "movies": []
+  "movies": [
+    {
+      "title": "Road House",
+      "genre": "Action",
+      "director": " Doug Liman",
+      "year": "2024",
+      "imageUrl": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSIY3nvZcpNGydPGuXa29AvrC67mN1pg__38KRJJ26nNODB425K",
+      "rating": "6",
+      "description": "Ex-UFC fighter Dalton takes a job as a bouncer at a Florida Keys roadhouse, only to discover that this paradise is not all it seems.",
+      "id": "2kr6rvz2m27jacxq"
+    },
+    {
+      "title": "Deadpool & Wolverine",
+      "genre": "Action",
+      "director": "Shawn Levy",
+      "year": "2024",
+      "imageUrl": "https://lumiere-a.akamaihd.net/v1/images/image_9b066416.jpeg?region=0,0,540,810",
+      "rating": "7",
+      "description": "Deadpool is offered a place in the Marvel Cinematic Universe by the Time Variance Authority, but instead recruits a variant of Wolverine to save his universe from extinction.",
+      "id": "2kr6rw33m27jbror"
+    }
+  ]
 }
