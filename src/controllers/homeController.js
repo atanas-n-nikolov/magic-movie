@@ -2,8 +2,10 @@ import { Router } from "express";
 
 const router = Router();
 
+const movies = []
+
 router.get('/', (req, res) => {
-  res.render('home');
+  res.render('home', { movies });
 });
 
 router.get('/about', (req, res) => {
