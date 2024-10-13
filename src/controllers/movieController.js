@@ -22,8 +22,11 @@ router.get('/:movieId/details', async (req, res) => {
   res.render('movies/details', { movie });
 });
 
-router.get('/search', (req, res) => {
-  res.render('home', { isSearch: true });
+router.get('/search', async (req, res) => {
+  const filter = req.query;
+  const movies = await movieService.getAll(filter)
+
+  res.render('home', { isSearch: true, movies, filter });
 });
 
 function getRatingViewData(rating) {
