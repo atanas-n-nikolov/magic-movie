@@ -1,0 +1,11 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Bulshits",
+      "imageUrl": "caBooom",
+      "genre": "Action",
+      "description": "Abra-Cadabra"
+    }
+  ]
+}

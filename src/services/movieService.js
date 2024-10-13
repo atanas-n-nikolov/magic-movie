@@ -1,14 +1,6 @@
-const movies = [
-  {
-    id:1,
-    title: 'AbraCadabra',
-    imageUrl: '..',
-    genre: 'Adventure',
-    description: 'Bullshits'
-  }
-];
+import movieData from "../data/movieData.js";
 
-const getAll = () => movies;
+const getAll = () => movieData.getMovies();
 
 export default {
   getAll
