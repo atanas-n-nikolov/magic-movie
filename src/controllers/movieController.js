@@ -7,10 +7,18 @@ router.get('/create', (req, res) => {
   res.render('movies/create');
 });
 
-router.post('/create', (req, res) => {
+router.post('/create', async (req, res) => {
   const movieData = req.body;
-  movieService.create(movieData);
+  await movieService.create(movieData);
+
   res.redirect('/');
+});
+
+router.get('/:movieId/details', async (req, res) => {
+  const movieId = req.params.movieId;
+  const movie = await movieService.getOne(movieId);
+
+  res.render('movies/details', { movie });
 });
 
 export default router;

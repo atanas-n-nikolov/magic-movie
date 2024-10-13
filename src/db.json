@@ -1,21 +1,3 @@
 {
-  "movies": [
-    {
-      "id": 1,
-      "title": "Bulshits",
-      "imageUrl": "caBooom",
-      "genre": "Action",
-      "description": "Abra-Cadabra"
-    },
-    {
-      "title": "2",
-      "genre": "1",
-      "director": "2",
-      "year": "2",
-      "imageUrl": "asd",
-      "rating": "2",
-      "description": "asd",
-      "id": "2kr6rv0mm27iknu7"
-    }
-  ]
+  "movies": []
 }
