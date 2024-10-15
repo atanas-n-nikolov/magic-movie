@@ -1,10 +1,10 @@
-import { Schema, model } from "mongoose";
+import { Schema, model, Types } from "mongoose";
 import bcrypt from 'bcrypt';
 
 const SALT_ROUND = 10;
 
 const userSchema = new Schema({
-  user: String,
+  email: String,
   password: {
     type: String,
     minLength: [3, 'Your password is too short!']
