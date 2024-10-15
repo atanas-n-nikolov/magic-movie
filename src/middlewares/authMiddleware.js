@@ -1,7 +1,7 @@
-import jwt from 'jsonwebtoken';
+import jwt from '../lib/jwt.js';
 import 'dotenv/config';
 
-export const authMiddleware = (req, res, next) => {
+export const authMiddleware = async (req, res, next) => {
   const token = req.cookies['auth'];
   
   if(!token) {
@@ -9,7 +9,7 @@ export const authMiddleware = (req, res, next) => {
   };
 
   try {
-    const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
+    const decodedToken = await jwt.verify(token, process.env.JWT_SECRET);
     const user = {
       _id: decodedToken._id,
       email: decodedToken.email,
