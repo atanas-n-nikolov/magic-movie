@@ -20,7 +20,7 @@ const getAll = (filter = {}) => {
 
 const getOne = (movieId) => Movie.findById(movieId).populate('casts.rel');
 
-const create = (movie) => Movie.create(movie);
+const create = (movie, ownerId) => Movie.create({...movie, owner: ownerId});
 
 const attach = (movieId, castId, character) => {
   return Movie.findByIdAndUpdate(movieId, { $push: { casts: { rel: castId, character } } });
