@@ -28,6 +28,12 @@ const movieSchema = new Schema({
   rating: {
     type: Number,
     required: true,
+    validate: {
+      validator: function(value) {
+        return Number.isInteger(value);
+      },
+      message: 'Rating must be a whole number.',
+    },
     min: [1, 'Rating should be at least 1'],
     max: [5, 'Rating cannot be higher than 6'],
   },
