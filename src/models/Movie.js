@@ -4,30 +4,30 @@ import { Schema, model, Types } from "mongoose";
 const movieSchema = new Schema({
   title: {
     type: String,
-    required: true,
+    required: [true, 'Movie title is required!'],
     minLength: 5,
     validate: [/^[A-Za-z0-9 ]+$/, 'Title can contain only alpha numeric characters!']
   },
   genre: {
     type: String,
-    required: true,
+    required: [true, 'Movie genre is required!'],
     lowercase: true,
     validate: [/^[A-Za-z0-9 ]+$/, 'Genre can contain only alpha numeric characters!']
   },
   director: {
     type: String,
-    required: true,
+    required: [true, 'Movie director is required!'],
     validate: [/^[A-Za-z0-9 ]+$/, 'Director can contain only alpha numeric characters!']
   },
   year: {
     type: Number,
-    required: true,
+    required: [true, 'Movie year is required!'],
     min: [1900, 'Cannot add movies older then 1900'],
     max: [2024, 'Cannot add movies after 2024'],
   },
   rating: {
     type: Number,
-    required: true,
+    required: [true, 'Movie rating is required!'],
     validate: {
       validator: function(value) {
         return Number.isInteger(value);
@@ -39,7 +39,7 @@ const movieSchema = new Schema({
   },
   description: {
     type: String,
-    required: true,
+    required: [true, 'Movie description is required!'],
     validate: [/^[A-Za-z0-9 ]+$/, 'Description can contain only alpha numeric characters!'],
     minLength: [20, 'Description should be at least 20 characters long!'],
   },
