@@ -25,6 +25,10 @@ const movieSchema = new Schema({
     min: [1900, 'Cannot add movies older then 1900'],
     max: [2024, 'Cannot add movies after 2024'],
   },
+  imageUrl: {
+    type: String,
+    validate: [/^https?:\/\//, 'Invalid image url!'],
+  },
   rating: {
     type: Number,
     required: [true, 'Movie rating is required!'],
@@ -42,10 +46,6 @@ const movieSchema = new Schema({
     required: [true, 'Movie description is required!'],
     validate: [/^[A-Za-z0-9 ]+$/, 'Description can contain only alpha numeric characters!'],
     minLength: [20, 'Description should be at least 20 characters long!'],
-  },
-  imageUrl: {
-    type: String,
-    validate: [/^https?:\/\//, 'Invalid image url!'],
   },
   casts: [{
     character: {
