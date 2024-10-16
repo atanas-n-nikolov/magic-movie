@@ -16,8 +16,8 @@ router.post('/create', isAuth, async (req, res) => {
   try {
     await movieService.create(movieData, ownerId);
   } catch (err) {
-    const errorMessage = Object.values(err.errors)[0]?.message;
-    return res.render('movies/create', { error: errorMessage, movie: movieData });
+    const errorMessage = Object.values(err.errors)?.map(error => error.message);
+    return res.render('movies/create', { errors: errorMessage, movie: movieData });
   };
 
   res.redirect('/');
